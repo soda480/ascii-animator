@@ -2,6 +2,7 @@ import os
 import re
 from ascii_animator import Animator, Animation, Speed
 
+
 class Afuera(Animation):
 
     def __init__(self):
@@ -24,9 +25,6 @@ class Afuera(Animation):
                 self._frames.append(infile.read().splitlines())
         self._current_frame = 0
         self.load_grid()
-
-    def end(self):
-        pass
 
     def load_grid(self):
         if self._current_frame >= len(self._frames):

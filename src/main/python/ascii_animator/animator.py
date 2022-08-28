@@ -22,10 +22,6 @@ class Animation(ABC):
     def cycle(self):
         pass  # pragma: no cover
 
-    @abstractmethod
-    def end(self):
-        pass  # pragma: no cover
-
     @property
     def grid(self):
         pass  # pragma: no cover
@@ -33,7 +29,7 @@ class Animation(ABC):
 
 class Animator(object):
 
-    def __init__(self, animation=None, speed=Speed.NORMAL, start=True):
+    def __init__(self, animation=None, speed=Speed.NORMAL, show_index=False):
         """ initialize Animator
         """
         if not isinstance(animation, Animation):
@@ -42,24 +38,20 @@ class Animator(object):
             raise ValueError("speed must be an instance of Speed Enum")
         self.speed = speed
         self.animation = animation
-        if start:
-            self.start()
-
-    def _update(self, lines):
-        """ update lines on terminal
-        """
-        for index in range(len(self.animation.grid)):
-            lines[index] = self.animation.grid[index]
+        self.show_index = show_index
+        self.start()
 
     def start(self):
-        """ animate the animation on the terminal
+        """ cycle throught the animation and update the terminal using Lines
         """
-        with Lines(self.animation.grid, show_index=False) as lines:
+        with Lines(self.animation.grid, show_index=self.show_index) as lines:
             try:
                 while True:
+                    # cycle through the animation by updating a grid frame
                     self.animation.cycle()
-                    self._update(lines)
+                    # update terminal using the Lines object
+                    for index in range(len(self.animation.grid)):
+                        lines[index] = self.animation.grid[index]
                     sleep(self.speed.value)
             except KeyboardInterrupt:
-                self.animation.end()
-                self._update(lines)
+                pass

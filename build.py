@@ -15,7 +15,7 @@ name = 'ascii-animator'
 authors = [Author('Emilio Reyes', 'soda480@gmail.com')]
 summary = 'A simple ASCII text animator'
 url = 'https://github.com/soda480/ascii-animator'
-version = '0.1.0'
+version = '0.1.1'
 default_task = [
     'clean',
     'analyze',

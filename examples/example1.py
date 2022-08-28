@@ -28,9 +28,6 @@ class Dancer(Animation):
         self._grid[3][3] = chr(9585)  # ╱
         self._grid[3][5] = chr(9586)  # ╲
 
-    def end(self):
-        self.setup()
-
     def frame1(self):
         self._grid[0][4] = chr(65077)  # ︵
         self._grid[1][1] = chr(9586)  # ╲

@@ -1,8 +1,6 @@
 import unittest
 from mock import patch
-from mock import call
-from mock import Mock
-from ascii_animator import Animator, Animation, Speed
+from ascii_animator import Animator, Animation
 
 
 class TestAnimation(Animation):
@@ -20,9 +18,6 @@ class TestAnimation(Animation):
         if self.current == 2:
             raise KeyboardInterrupt('keyboard interrupt')
 
-    def end(self):
-        pass
-
 
 class TestAnimator(unittest.TestCase):
 
@@ -36,27 +31,7 @@ class TestAnimator(unittest.TestCase):
 
     @patch('ascii_animator.animator.Lines')
     @patch('ascii_animator.animator.sleep')
-    @patch('ascii_animator.Animator._update')
-    def test__start_Should_EndAnimationAndUpdateLines_When_KeyboardInterrupt(self, update_patch, *patches):
+    def test__init_Should_UpdateLinesSleepEndAnimation_When_KeyboardInterrupt(self, sleep_patch, lines_patch, *patches):
         test_animation = TestAnimation()
-        animator = Animator(animation=test_animation, start=False)
-        animator.start()
-        update_patch.assert_called()
-
-    @patch('ascii_animator.animator.Lines')
-    @patch('ascii_animator.animator.sleep')
-    @patch('ascii_animator.Animator._update')
-    def test__start_Should_CycleAnimationAndUpdateLines_When_Called(self, update_patch, sleep_patch, *patches):
-        test_animation = TestAnimation()
-        animator = Animator(animation=test_animation, start=False)
-        animator.start()
-        update_patch.assert_called()
+        Animator(animation=test_animation)
         sleep_patch.assert_called()
-
-    @patch('ascii_animator.animator.Lines')
-    def test__update_Should_AssignLines_When_Called(self, *patches):
-        test_animation = TestAnimation()
-        animator = Animator(animation=test_animation)
-        lines = [[], [], []]
-        animator._update(lines)
-        self.assertEqual(lines[0], test_animation.grid[0])
