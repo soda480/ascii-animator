@@ -49,6 +49,7 @@ jobs:
           ID=$(docker create ascii-animator:3.9)
           docker cp $ID:/code/target/reports/ascii-animator_coverage.xml ascii-animator_coverage.xml
           ls *.xml
+          cat *.xml
           sed -i -e 's,filename="ascii_animator/,filename="src/main/python/ascii_animator/,g' ascii-animator_coverage.xml
       - name: upload report
         uses: codecov/codecov-action@v1
