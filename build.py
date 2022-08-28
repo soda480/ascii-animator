@@ -13,7 +13,7 @@ use_plugin('pypi:pybuilder_anybadge')
 
 name = 'ascii-animator'
 authors = [Author('Emilio Reyes', 'soda480@gmail.com')]
-summary = 'A simple ASCII text animator'
+summary = 'A simple ASCII art animator'
 url = 'https://github.com/soda480/ascii-animator'
 version = '0.1.1'
 default_task = [
@@ -39,6 +39,7 @@ def set_properties(project):
     project.set_property('flake8_ignore', 'F401, E501')
     project.build_depends_on('mock')
     project.depends_on_requirements('requirements.txt')
+    project.set_property('distutils_console_scripts', ['ascii-art-animator = ascii_animator.cli:main'])
     project.set_property('distutils_readme_description', True)
     project.set_property('distutils_description_overwrite', True)
     project.set_property('distutils_upload_skip_existing', True)
@@ -62,4 +63,4 @@ def set_properties(project):
     project.set_property('radon_break_build_average_complexity_threshold', 4)
     project.set_property('radon_break_build_complexity_threshold', 10)
     project.set_property('bandit_break_build', True)
-    # project.set_property('anybadge_exclude', 'coverage')
+    project.set_property('anybadge_exclude', 'coverage')

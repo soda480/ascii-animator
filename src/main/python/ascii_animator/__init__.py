@@ -1,1 +1,1 @@
-from .animator import Animator, Speed, Animation
+from .animator import Animator, Speed, Animation, AsciiAnimation
