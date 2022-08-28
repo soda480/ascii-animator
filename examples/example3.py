@@ -2,7 +2,7 @@ import os
 import re
 from ascii_animator import Animator, Animation, Speed
 
-class WalkingMan(Animation):
+class Afuera(Animation):
 
     def __init__(self):
         self.setup()
@@ -39,7 +39,7 @@ class WalkingMan(Animation):
 
 
 def main():
-    Animator(animation=WalkingMan(), speed=Speed.FAST)
+    Animator(animation=Afuera(), speed=Speed.FAST)
 
 
 if __name__ == '__main__':

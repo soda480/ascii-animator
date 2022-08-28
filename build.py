@@ -11,7 +11,7 @@ use_plugin('pypi:pybuilder_radon')
 use_plugin('pypi:pybuilder_bandit')
 use_plugin('pypi:pybuilder_anybadge')
 
-name = 'ascii_animator'
+name = 'ascii-animator'
 authors = [Author('Emilio Reyes', 'soda480@gmail.com')]
 summary = 'A simple ASCII text animator'
 url = 'https://github.com/soda480/ascii-animator'
