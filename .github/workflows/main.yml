@@ -47,10 +47,10 @@ jobs:
       - name: prepare report
         run: |
           ID=$(docker create ascii-animator:3.9)
-          docker cp $ID:/code/target/reports/ascii-animator_coverage.xml ascii-animator_coverage.xml
-          sed -i -e 's,filename="ascii-animator/,filename="src/main/python/ascii-animator/,g' ascii-animator_coverage.xml
+          docker cp $ID:/code/target/reports/ascii_animator_coverage.xml ascii_animator_coverage.xml
+          sed -i -e 's,filename="ascii_animator/,filename="src/main/python/ascii_animator/,g' ascii_animator_coverage.xml
       - name: upload report
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          file: ascii-animator_coverage.xml
+          file: ascii_animator_coverage.xml
