@@ -1,6 +1,6 @@
 # ascii-animator
 [![build](https://github.com/soda480/ascii-animator/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/soda480/ascii-animator/actions/workflows/main.yml)
-[![codecov](https://codecov.io/gh/soda480/ascii-animator/branch/main/graph/badge.svg?token=zv4afpkZB6)](https://codecov.io/gh/soda480/ascii-animator)
+[![coverage](https://img.shields.io/badge/coverage-100.0%25-brightgreen)](https://pybuilder.io/)
 [![complexity](https://img.shields.io/badge/complexity-Simple:%204-brightgreen)](https://radon.readthedocs.io/en/latest/api.html#module-radon.complexity)
 [![vulnerabilities](https://img.shields.io/badge/vulnerabilities-None-brightgreen)](https://pypi.org/project/bandit/)
 [![PyPI version](https://badge.fury.io/py/ascii-animator.svg)](https://badge.fury.io/py/ascii-animator)
@@ -12,7 +12,7 @@ A simple ASCII text animator.
 ```bash
 pip install ascii_animator
 ```
-#### Example1
+#### [example1](https://github.com/soda480/game-of-life)
 
 A Conway [Game-Of-Life](https://github.com/soda480/game-of-life) implementation that uses `ascii_animator` to display the game to the terminal.
 
