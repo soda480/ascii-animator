@@ -5,7 +5,9 @@
 [![PyPI version](https://badge.fury.io/py/ascii-animator.svg)](https://badge.fury.io/py/ascii-animator)
 [![python](https://img.shields.io/badge/python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-teal)](https://www.python.org/downloads/)
 
-A simple ASCII text animator. The `ascii-art-animator` CLI will take as input a GIF image - extract all the frames from it, convert each frame to ASCII art using [ascii-magic](https://pypi.org/project/ascii-magic/), then display each frame to the terminal using [l2term](https://pypi.org/project/l2term/).
+A simple ASCII text animator.
+
+The `ascii-art-animator` CLI will take as input a GIF image, extract all the frames from it, convert each frame to ASCII art using [ascii-magic](https://pypi.org/project/ascii-magic/), then display each frame to the terminal using [l2term](https://pypi.org/project/l2term/).
 
 ### Installation
 ```bash
@@ -29,17 +31,25 @@ optional arguments:
 
 ### Examples
 
-![gif](https://raw.githubusercontent.com/soda480/ascii-animator/0.1.1/docs/images/marcovich.gif)
+#### ASCII conversion and animation of GIF images
+
+Convert the following [GIF image](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/marcovich.gif)
+
 ```bash
 ascii-art-animator -f docs/images/marcovich.gif
 ```
-![example](https://raw.githubusercontent.com/soda480/ascii-animator/0.1.1/docs/images/marcovich-execution.gif)
 
-![gif](https://raw.githubusercontent.com/soda480/ascii-animator/0.1.1/docs/images/afuera.gif)
+![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/marcovich-execution.gif)
+
+Convert the following [GIF image](https://github.com/soda480/ascii-animator/blob/main/docs/images/afuera.gif?raw=true)
+
 ```bash
 ascii-art-animator -f docs/images/afuera.gif -s fast
 ```
-![example](https://raw.githubusercontent.com/soda480/ascii-animator/0.1.1/docs/images/afuera-execution.gif)
+
+![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/afuera-execution.gif)
+
+#### Game-Of-Life
 
 A Conway [Game-Of-Life](https://github.com/soda480/game-of-life) implementation that uses `ascii_animator` to display the game to the terminal.
 
