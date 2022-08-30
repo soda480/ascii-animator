@@ -17,7 +17,7 @@ pip install ascii_animator
 ### Usage
 ```
 ascii-art-animator --help
-usage: ascii-art-animator [-h] [-s SPEED] [-f FILE] [-d]
+usage: ascii-art-animator [-h] [-s SPEED] [-f FILE] [-d] [-a] [-m MAX_LOOPS]
 
 Ascii Art Animator from GIF
 
@@ -27,6 +27,9 @@ optional arguments:
                         speed of the animation: very_slow, slow, normal, fast (default normal)
   -f FILE, --file FILE  the path to a gif file
   -d, --debug           display debug messages to stdout
+  -a, --show_axis       display the grid axis
+  -m MAX_LOOPS, --max_loops MAX_LOOPS
+                        maximum number of loops, set to 0 to loop through image until keyboard interrupt (default 3)
 ```
 
 ### Examples
@@ -39,7 +42,7 @@ Convert the following [GIF image](https://raw.githubusercontent.com/soda480/asci
 ascii-art-animator -f docs/images/marcovich.gif
 ```
 
-![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/marcovich-execution.gif)
+![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/marcovich-exec.gif)
 
 Convert the following [GIF image](https://github.com/soda480/ascii-animator/blob/main/docs/images/afuera.gif?raw=true)
 
@@ -47,7 +50,7 @@ Convert the following [GIF image](https://github.com/soda480/ascii-animator/blob
 ascii-art-animator -f docs/images/afuera.gif -s fast
 ```
 
-![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/afuera-execution.gif)
+![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/afuera-exec.gif)
 
 #### Game-Of-Life
 

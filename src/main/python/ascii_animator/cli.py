@@ -22,10 +22,12 @@ def get_speed(value):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Ascii Art Animator from GIF")
-    parser.add_argument("-s", "--speed", type=str, default='normal', help="speed of the animation: very_slow, slow, normal, fast (default normal)")
-    parser.add_argument("-f", "--file", type=str, help="the path to a gif file")
-    parser.add_argument("-d", "--debug", action="store_true", help="display debug messages to stdout")
+    parser = argparse.ArgumentParser(description='Ascii Art Animator from GIF')
+    parser.add_argument('-s', '--speed', type=str, default='normal', help='speed of the animation: very_slow, slow, normal, fast (default normal)')
+    parser.add_argument('-f', '--file', type=str, help='the path to a gif file')
+    parser.add_argument('-d', '--debug', action='store_true', help='display debug messages to stdout')
+    parser.add_argument('-a', '--show_axis', action='store_true', help='display the grid axis')
+    parser.add_argument('-m', '--max_loops', type=int, default=3, help='maximum number of loops, set to 0 to loop through image until keyboard interrupt (default 3)')
 
     args = parser.parse_args()
 
@@ -36,7 +38,9 @@ def main():
         speed = get_speed(args.speed)
         Animator(
             animation=AsciiAnimation(args.file),
-            speed=speed)
+            speed=speed,
+            show_axis=args.show_axis,
+            max_loops=args.max_loops)
 
     except argparse.ArgumentError:
         parser.print_help()
@@ -47,5 +51,5 @@ def main():
         sys.exit(2)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
