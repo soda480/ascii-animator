@@ -42,7 +42,7 @@ Convert the following [GIF image](https://raw.githubusercontent.com/soda480/asci
 ascii-art-animator -f docs/images/marcovich.gif
 ```
 
-![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/marcovich-execution.gif)
+![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/marcovich-exec.gif)
 
 Convert the following [GIF image](https://github.com/soda480/ascii-animator/blob/main/docs/images/afuera.gif?raw=true)
 
@@ -50,7 +50,7 @@ Convert the following [GIF image](https://github.com/soda480/ascii-animator/blob
 ascii-art-animator -f docs/images/afuera.gif -s fast
 ```
 
-![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/afuera-execution.gif)
+![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/afuera-exec.gif)
 
 #### Game-Of-Life
 

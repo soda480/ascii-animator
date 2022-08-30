@@ -101,7 +101,7 @@ class Animator(object):
         logger.debug('starting ascii art animation')
         try:
             logger.debug(f'there are {len(self.animation.grid)} lines in the animation to display')
-            with Lines(self.animation.grid, show_index=self.show_axis) as lines:
+            with Lines(self.animation.grid, show_index=self.show_axis, show_x_axis=self.show_axis) as lines:
                 self.loop = 1
                 while True:
                     # update the grid with the next frame
