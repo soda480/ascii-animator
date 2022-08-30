@@ -17,7 +17,7 @@ pip install ascii_animator
 ### Usage
 ```
 ascii-art-animator --help
-usage: ascii-art-animator [-h] [-s SPEED] [-f FILE] [-d]
+usage: ascii-art-animator [-h] [-s SPEED] [-f FILE] [-d] [-a] [-m MAX_LOOPS]
 
 Ascii Art Animator from GIF
 
@@ -27,6 +27,9 @@ optional arguments:
                         speed of the animation: very_slow, slow, normal, fast (default normal)
   -f FILE, --file FILE  the path to a gif file
   -d, --debug           display debug messages to stdout
+  -a, --show_axis       display the grid axis
+  -m MAX_LOOPS, --max_loops MAX_LOOPS
+                        maximum number of loops, set to 0 to loop through image until keyboard interrupt (default 3)
 ```
 
 ### Examples
