@@ -27,7 +27,8 @@ def main():
     parser.add_argument('-f', '--file', type=str, help='the path to a gif file')
     parser.add_argument('-d', '--debug', action='store_true', help='display debug messages to stdout')
     parser.add_argument('-a', '--show_axis', action='store_true', help='display the grid axis')
-    parser.add_argument('-m', '--max_loops', type=int, default=3, help='maximum number of loops, set to 0 to loop through image until keyboard interrupt (default 3)')
+    parser.add_argument('-m', '--max_loops', type=int, default=1, help='maximum number of loops, set to 0 to loop through image until keyboard interrupt (default 1)')
+    parser.add_argument('-c', '--columns', type=int, default=150, help='the number of characters per row (default 150)')
 
     args = parser.parse_args()
 
@@ -37,7 +38,7 @@ def main():
     try:
         speed = get_speed(args.speed)
         Animator(
-            animation=AsciiAnimation(args.file),
+            animation=AsciiAnimation(args.file, columns=args.columns),
             speed=speed,
             show_axis=args.show_axis,
             max_loops=args.max_loops)
