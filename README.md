@@ -38,10 +38,9 @@ optional arguments:
 #### ASCII Art Animator
 
 Use `ascii-art-animator` to convert the following [GIF image](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/marcovich.gif) to an ascii animation and demonstrate the use of the optional arguments.
-* enable debugging
 * show x and y axis
 * loop through the image only once
-* set columns to 140 characters
+* set columns to 130 characters
 
 ```bash
 ascii-art-animator -f docs/images/marcovich.gif -a -m 1 -c 130
