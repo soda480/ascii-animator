@@ -16,8 +16,7 @@ pip install ascii_animator
 
 ### Usage
 ```
-ascii-art-animator --help
-usage: ascii-art-animator [-h] [-s SPEED] [-f FILE] [-d] [-a] [-m MAX_LOOPS]
+usage: ascii-art-animator [-h] [-s SPEED] [-f FILE] [-d] [-a] [-m MAX_LOOPS] [-c COLUMNS]
 
 Ascii Art Animator from GIF
 
@@ -29,32 +28,42 @@ optional arguments:
   -d, --debug           display debug messages to stdout
   -a, --show_axis       display the grid axis
   -m MAX_LOOPS, --max_loops MAX_LOOPS
-                        maximum number of loops, set to 0 to loop through image until keyboard interrupt (default 3)
+                        maximum number of loops, set to 0 to loop through image until keyboard interrupt (default 1)
+  -c COLUMNS, --columns COLUMNS
+                        the number of characters per row (default 150)
 ```
 
 ### Examples
 
-#### ASCII conversion and animation of GIF images
+#### ASCII Art Animator
 
-Convert the following [GIF image](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/marcovich.gif)
+Use `ascii-art-animator` to convert the following [GIF image](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/marcovich.gif) to an ascii animation and demonstrate the use of the optional arguments.
+* enable debugging
+* show x and y axis
+* loop through the image only once
+* set columns to 140 characters
 
 ```bash
-ascii-art-animator -f docs/images/marcovich.gif
+ascii-art-animator -f docs/images/marcovich.gif -d -a -m 1 -c 140
 ```
 
 ![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/marcovich-exec.gif)
 
-Convert the following [GIF image](https://github.com/soda480/ascii-animator/blob/main/docs/images/afuera.gif?raw=true)
+#### [Equalizer Bars Animation](https://github.com/soda480/ascii-animator/blob/main/examples/example2.py)
 
-```bash
-ascii-art-animator -f docs/images/afuera.gif -s fast
-```
+Create an animation by subclassing the `Animation` class to resemble symmetrical equalizer bars and display it to the terminal using the `Animator` class.
 
-![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/afuera-exec.gif)
+![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/example2.gif)
 
-#### Game-Of-Life
+#### [Matrix Animation](https://github.com/soda480/ascii-animator/blob/main/examples/example3.py)
 
-A Conway [Game-Of-Life](https://github.com/soda480/game-of-life) implementation that uses `ascii_animator` to display the game to the terminal.
+Create an animation by subclassing the `Animation` class to resemble the Matrix and display it to the terminal using the `Animator` class.
+
+![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/example3.gif)
+
+#### [Game-Of-Life](https://github.com/soda480/game-of-life)
+
+A Conway Game-Of-Life implementation that uses `ascii_animator` to display the game to the terminal.
 
 ### Development
 
