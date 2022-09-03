@@ -1,2 +1,2 @@
-l2term~=0.1.7
+l2term~=0.1.8
 ascii-magic

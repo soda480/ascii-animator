@@ -118,13 +118,24 @@ class Animator(object):
             return
         sleep(self.speed.value)
 
+    def _get_max_chars(self):
+        """ return max chars for animation
+        """
+        if hasattr(self.animation, 'columns'):
+            max_chars = self.animation.columns
+        elif hasattr(self.animation, 'x_size'):
+            max_chars = self.animation.x_size
+        else:
+            max_chars = None
+        return max_chars
+
     def start(self):
         """ cycle throught the animation and update the terminal using Lines
         """
         logger.debug('starting ascii art animation')
         try:
             logger.debug(f'there are {len(self.animation.grid)} lines in the animation to display')
-            with Lines(self.animation.grid, show_index=self.show_axis, show_x_axis=self.show_axis) as lines:
+            with Lines(self.animation.grid, show_index=self.show_axis, show_x_axis=self.show_axis, max_chars=self._get_max_chars()) as lines:
                 self.loop = 1
                 while True:
                     # update the grid with the next frame
