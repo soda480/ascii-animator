@@ -61,7 +61,7 @@ class Matrix(Animation):
                 self._grid[y][x] = random.choice(CHARS)
 
 def main():
-    Animator(animation=Matrix(35, 125), speed=Speed.SLOW)
+    Animator(animation=Matrix(25, 100), speed=Speed.SLOW)
 
 
 if __name__ == '__main__':  # pragma: no cover
