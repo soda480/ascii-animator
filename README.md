@@ -43,7 +43,7 @@ Use `ascii-art-animator` to convert the following [GIF image](https://raw.github
 * set columns to 130 characters
 
 ```bash
-ascii-art-animator -f docs/images/marcovich.gif -a -m 1 -c 130
+ascii-art-animator -f docs/images/marcovich.gif -a -m 3 -c 100
 ```
 
 ![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/marcovich-exec.gif)
