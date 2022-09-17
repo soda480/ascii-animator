@@ -39,7 +39,7 @@ class EqAmpLevelBars(Animation):
 
 
 def main():
-    Animator(animation=EqAmpLevelBars(35, 130), speed=Speed.SLOW)
+    Animator(animation=EqAmpLevelBars(25, 100), speed=Speed.SLOW)
 
 
 if __name__ == '__main__':  # pragma: no cover
