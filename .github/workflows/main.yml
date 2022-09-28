@@ -52,7 +52,6 @@ jobs:
           cat *.xml
           sed -i -e 's,filename="ascii_animator/,filename="src/main/python/ascii_animator/,g' ascii-animator_coverage.xml
       - name: upload report
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v3
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
           file: ascii-animator_coverage.xml
