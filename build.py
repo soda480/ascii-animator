@@ -15,7 +15,7 @@ name = 'ascii-animator'
 authors = [Author('Emilio Reyes', 'soda480@gmail.com')]
 summary = 'A simple ASCII art animator'
 url = 'https://github.com/soda480/ascii-animator'
-version = '0.1.5'
+version = '0.1.6'
 default_task = [
     'clean',
     'analyze',
@@ -44,23 +44,12 @@ def set_properties(project):
     project.set_property('distutils_description_overwrite', True)
     project.set_property('distutils_upload_skip_existing', True)
     project.set_property('distutils_classifiers', [
-        'Development Status :: 4 - Beta',
-        'Environment :: Console',
-        'Environment :: Other Environment',
-        'Intended Audience :: Developers',
-        'Intended Audience :: System Administrators',
-        'License :: OSI Approved :: Apache Software License',
-        'Operating System :: POSIX :: Linux',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
-        'Programming Language :: Python :: 3.10',
-        'Topic :: Software Development :: Libraries',
-        'Topic :: Software Development :: Libraries :: Python Modules',
-        'Topic :: System :: Networking',
-        'Topic :: System :: Systems Administration'])
+        'Programming Language :: Python :: 3.10'])
     project.set_property('radon_break_build_average_complexity_threshold', 4)
     project.set_property('radon_break_build_complexity_threshold', 10)
     project.set_property('bandit_break_build', True)
-    project.set_property('anybadge_exclude', 'coverage')
+    project.set_property('anybadge_exclude', 'coverage, complexity')

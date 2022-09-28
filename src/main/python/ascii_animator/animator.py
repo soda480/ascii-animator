@@ -7,7 +7,7 @@ from abc import ABC, abstractmethod
 
 import ascii_magic
 from PIL import Image, ImageSequence
-from l2term import Lines
+from list2term import Lines
 
 logger = logging.getLogger(__name__)
 
@@ -74,17 +74,16 @@ class AsciiAnimation(Animation):
             self._grid = self._frames[self._current]
             self._current += 1
             return self._image_processed
-        else:
-            cycle_complete = False
-            if self._current == self._number_of_frames:
-                self._current = 0
-                cycle_complete = True
-            self._grid = self._frames[self._current]
-            self._current += 1
-            return cycle_complete
+        cycle_complete = False
+        if self._current == self._number_of_frames:
+            self._current = 0
+            cycle_complete = True
+        self._grid = self._frames[self._current]
+        self._current += 1
+        return cycle_complete
 
 
-class Animator(object):
+class Animator:
 
     def __init__(self, animation=None, speed=Speed.NORMAL, show_axis=False, max_loops=None):
         """ initialize Animator
@@ -134,14 +133,14 @@ class Animator(object):
         """
         logger.debug('starting ascii art animation')
         try:
-            logger.debug(f'there are {len(self.animation.grid)} lines in the animation to display')
+            logger.debug('there are %d lines in the animation to display', len(self.animation.grid))
             with Lines(self.animation.grid, show_index=self.show_axis, show_x_axis=self.show_axis, max_chars=self._get_max_chars()) as lines:
                 self.loop = 1
                 while True:
                     # update the grid with the next frame
                     cycle_complete = self.animation.cycle()
                     # update terminal via the Lines object
-                    for index in range(len(self.animation.grid)):
+                    for index, _ in enumerate(self.animation.grid):
                         lines[index] = self.animation.grid[index]
                     self._check_loops(cycle_complete)
                     self._sleep()
@@ -150,4 +149,4 @@ class Animator(object):
             logger.debug('encountered a keyboard interrupt - ending animation')
 
         except MaxLoopsProcessed:
-            logger.debug(f'maximum loops processed {self.loop - 1} - ending animation')
+            logger.debug('maximum loops processed %d - ending animation', self.loop - 1)
