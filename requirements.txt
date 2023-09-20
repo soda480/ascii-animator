@@ -1,2 +1,2 @@
 list2term~=0.1.0
-ascii-magic
+ascii-magic~=1.6
