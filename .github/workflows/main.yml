@@ -1,7 +1,7 @@
-name: build
+name: build+test
 on:
   schedule:
-  - cron: "0 8 * * *"
+  - cron: "0 8 * * 2,4,6"
   push:
     branches:
       - '**'
@@ -12,7 +12,7 @@ jobs:
   build-images:
     strategy:
       matrix:
-        version: ['3.7', '3.8', '3.9', '3.10']
+        version: ['3.8', '3.9', '3.10', '3.11', '3.12']
     name: Build Python Docker images
     runs-on: ubuntu-20.04
     steps:
@@ -27,7 +27,7 @@ jobs:
           docker save --output images/ascii-animator-${{ matrix.version }}.tar ascii-animator:${{ matrix.version }}
       - name: upload ascii-animator ${{ matrix.version }} image artifact
         if: ${{ matrix.version == '3.9' }}
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: image
           path: images/ascii-animator-${{ matrix.version }}.tar
@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: download image artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: image
           path: images/
