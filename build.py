@@ -15,7 +15,7 @@ name = 'ascii-animator'
 authors = [Author('Emilio Reyes', 'soda480@gmail.com')]
 summary = 'A simple ASCII art animator'
 url = 'https://github.com/soda480/ascii-animator'
-version = '0.1.8'
+version = '0.2.0'
 default_task = [
     'clean',
     'analyze',
@@ -54,3 +54,4 @@ def set_properties(project):
     project.set_property('radon_break_build_complexity_threshold', 10)
     project.set_property('bandit_break_build', True)
     project.set_property('anybadge_exclude', 'coverage')
+    project.set_property('anybadge_complexity_use_average', True)
