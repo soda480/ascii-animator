@@ -55,27 +55,29 @@ ascii-art-animator -f docs/images/marcovich.gif -a -m 3 -c 100
 
 ### `Animation` class
 
+Use the Animation class to create your own animations.
+
 #### [Binary Search Animation](https://github.com/soda480/ascii-animator/blob/main/examples/example5.py)
 
-Create an animation by subclassing the `Animation` class to show a binary search. A binary search is a search algorithm that finds a specific value in a sorted array by repeatedly dividing the search interval in half.
+A binary search is a search algorithm that finds a specific value in a sorted array by repeatedly dividing the search interval in half.
 
 ![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/example5.gif)
 
 #### [Selection Sort Animation](https://github.com/soda480/ascii-animator/blob/main/examples/example4.py)
 
-Create an animation by subclassing the `Animation` class to show a selection sort. A selection sort search is a simple and efficient sorting algorithm that works by repeatedly selecting the smallest (or largest) element from the unsorted portion of the list and moving it to the sorted portion of the list.
+A selection sort search is a simple and efficient sorting algorithm that works by repeatedly selecting the smallest (or largest) element from the unsorted portion of the list and moving it to the sorted portion of the list.
 
 ![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/example4.gif)
 
 #### [Equalizer Bars Animation](https://github.com/soda480/ascii-animator/blob/main/examples/example2.py)
 
-Create an animation by subclassing the `Animation` class to resemble symmetrical equalizer bars and display it to the terminal using the `Animator` class.
+An animation for symmetrical equalizer bars.
 
 ![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/example2.gif)
 
 #### [Matrix Animation](https://github.com/soda480/ascii-animator/blob/main/examples/example3.py)
 
-Create an animation by subclassing the `Animation` class to resemble the Matrix and display it to the terminal using the `Animator` class.
+A Matrix animation.
 
 ![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/example3.gif)
 
