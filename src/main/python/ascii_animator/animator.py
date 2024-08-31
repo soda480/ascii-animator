@@ -1,5 +1,6 @@
 import os
 import re
+import inspect
 import logging
 from time import sleep
 from enum import Enum
@@ -104,7 +105,7 @@ class Animator:
         """
         if not cycle_complete:
             return
-        if self.max_loops and self.loop > self.max_loops:
+        if self.max_loops and self.loop >= self.max_loops:
             raise MaxLoopsProcessed('maximum number of loops processed')
         self.loop += 1
 
@@ -128,6 +129,15 @@ class Animator:
             max_chars = None
         return max_chars
 
+    def _update_terminal(self, lines, cycle_complete):
+        """ update lines
+        """
+        # update terminal via the Lines object
+        for index, _ in enumerate(self.animation.grid):
+            lines[index] = self.animation.grid[index]
+        self._check_loops(cycle_complete)
+        self._sleep()
+
     def start(self):
         """ cycle throught the animation and update the terminal using Lines
         """
@@ -138,12 +148,14 @@ class Animator:
                 self.loop = 1
                 while True:
                     # update the grid with the next frame
-                    cycle_complete = self.animation.cycle()
-                    # update terminal via the Lines object
-                    for index, _ in enumerate(self.animation.grid):
-                        lines[index] = self.animation.grid[index]
-                    self._check_loops(cycle_complete)
-                    self._sleep()
+                    if inspect.isgeneratorfunction(self.animation.cycle):
+                        # support case where cycle is a generator
+                        for cycle_complete in self.animation.cycle():
+                            self._update_terminal(lines, cycle_complete)
+                        self.animation.reset()
+                    else:
+                        cycle_complete = self.animation.cycle()
+                        self._update_terminal(lines, cycle_complete)
 
         except KeyboardInterrupt:
             logger.debug('encountered a keyboard interrupt - ending animation')
