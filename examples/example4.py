@@ -64,4 +64,4 @@ class SelectionSort(Animation):
 
 
 if __name__ == '__main__':
-    Animator(animation=SelectionSort(), speed=Speed.FAST, max_loops=2)
+    Animator(animation=SelectionSort(), speed=Speed.FAST, max_loops=1)

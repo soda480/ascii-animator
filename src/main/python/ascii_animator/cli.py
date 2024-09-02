@@ -41,7 +41,8 @@ def main():
             animation=AsciiAnimation(args.file, columns=args.columns),
             speed=speed,
             show_axis=args.show_axis,
-            max_loops=args.max_loops)
+            max_loops=args.max_loops,
+            first_cycle_sleep=False)
 
     except argparse.ArgumentError:
         parser.print_help()

@@ -86,7 +86,7 @@ class AsciiAnimation(Animation):
 
 class Animator:
 
-    def __init__(self, animation=None, speed=Speed.NORMAL, show_axis=False, max_loops=None):
+    def __init__(self, animation=None, speed=Speed.NORMAL, show_axis=False, max_loops=None, first_cycle_sleep=True):
         """ initialize Animator
         """
         logger.debug('executing Animator constructor')
@@ -98,6 +98,11 @@ class Animator:
         self.animation = animation
         self.show_axis = show_axis
         self.max_loops = max_loops
+        # control if animator should sleep after first loop
+        # some animations first cycle is slow thus a sleep is not necessary
+        # AsciiAnimation first cycle loads the image into memory
+        # this process is inherently slow thus sleeping is not necessary
+        self.first_cycle_sleep = first_cycle_sleep
         self.start()
 
     def _check_loops(self, cycle_complete):
@@ -112,9 +117,7 @@ class Animator:
     def _sleep(self):
         """ determine if execution should sleep
         """
-        if self.loop == 1 and isinstance(self.animation, AsciiAnimation):
-            # AsciiAnimation first cycle loads the image into memory
-            # this process is inherently slow thus sleeping is not necessary
+        if self.loop == 1 and not self.first_cycle_sleep:
             return
         sleep(self.speed.value)
 
@@ -143,7 +146,7 @@ class Animator:
         """
         logger.debug('starting ascii art animation')
         try:
-            logger.debug('there are %d lines in the animation to display', len(self.animation.grid))
+            logger.debug(f'there are {len(self.animation.grid)} lines in the animation to display')
             with Lines(self.animation.grid, show_index=self.show_axis, show_x_axis=self.show_axis, max_chars=self._get_max_chars()) as lines:
                 self.loop = 1
                 while True:
@@ -161,4 +164,4 @@ class Animator:
             logger.debug('encountered a keyboard interrupt - ending animation')
 
         except MaxLoopsProcessed:
-            logger.debug('maximum loops processed %d - ending animation', self.loop - 1)
+            logger.debug(f'maximum loops processed {self.loop - 1} - ending animation')
