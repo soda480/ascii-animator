@@ -86,7 +86,7 @@ class AsciiAnimation(Animation):
 
 class Animator:
 
-    def __init__(self, animation=None, speed=Speed.NORMAL, show_axis=False, max_loops=None):
+    def __init__(self, animation=None, speed=Speed.NORMAL, show_axis=False, max_loops=None, first_cycle_sleep=True):
         """ initialize Animator
         """
         logger.debug('executing Animator constructor')
@@ -98,6 +98,11 @@ class Animator:
         self.animation = animation
         self.show_axis = show_axis
         self.max_loops = max_loops
+        # control if animator should sleep after first loop
+        # some animations first cycle is slow thus a sleep is not necessary
+        # AsciiAnimation first cycle loads the image into memory
+        # this process is inherently slow thus sleeping is not necessary
+        self.first_cycle_sleep = first_cycle_sleep
         self.start()
 
     def _check_loops(self, cycle_complete):
@@ -112,9 +117,7 @@ class Animator:
     def _sleep(self):
         """ determine if execution should sleep
         """
-        if self.loop == 1 and isinstance(self.animation, AsciiAnimation):
-            # AsciiAnimation first cycle loads the image into memory
-            # this process is inherently slow thus sleeping is not necessary
+        if self.loop == 1 and not self.first_cycle_sleep:
             return
         sleep(self.speed.value)
 
