@@ -146,7 +146,7 @@ class Animator:
         """
         logger.debug('starting ascii art animation')
         try:
-            logger.debug('there are %d lines in the animation to display', len(self.animation.grid))
+            logger.debug(f'there are {len(self.animation.grid)} lines in the animation to display')
             with Lines(self.animation.grid, show_index=self.show_axis, show_x_axis=self.show_axis, max_chars=self._get_max_chars()) as lines:
                 self.loop = 1
                 while True:
@@ -164,4 +164,4 @@ class Animator:
             logger.debug('encountered a keyboard interrupt - ending animation')
 
         except MaxLoopsProcessed:
-            logger.debug('maximum loops processed %d - ending animation', self.loop - 1)
+            logger.debug(f'maximum loops processed {self.loop - 1} - ending animation')

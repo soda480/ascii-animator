@@ -69,6 +69,10 @@ A selection sort search is a simple and efficient sorting algorithm that works b
 
 ![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/example4.gif)
 
+Here is another [example](https://github.com/soda480/ascii-animator/blob/main/examples/example6.py) of a selection sort animation this time using vertical bars.
+
+![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/example6.gif)
+
 #### [Equalizer Bars Animation](https://github.com/soda480/ascii-animator/blob/main/examples/example2.py)
 
 An animation for symmetrical equalizer bars.
