@@ -1,12 +1,28 @@
-# ascii-animator
-[![build+test](https://github.com/soda480/ascii-animator/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/soda480/ascii-animator/actions/workflows/main.yml)
-[![complexity](https://img.shields.io/badge/complexity-A-brightgreen)](https://radon.readthedocs.io/en/latest/api.html#module-radon.complexity)
-[![vulnerabilities](https://img.shields.io/badge/vulnerabilities-None-brightgreen)](https://pypi.org/project/bandit/)
-[![PyPI version](https://badge.fury.io/py/ascii-animator.svg)](https://badge.fury.io/py/ascii-animator)
-[![python](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-teal)](https://www.python.org/downloads/)
+<div align="center" style="padding: 20px 0;">
+  <h1 style="font-size: 2.5em; margin-bottom: 0.2em; font-family: Arial, sans-serif;">ascii-animator - A simple ASCII text animator</h1>
+  
+  <div style="margin: 20px 0;">
+    <a href="https://github.com/soda480/ascii-animator/actions/workflows/main.yml">
+      <img src="https://github.com/soda480/ascii-animator/actions/workflows/main.yml/badge.svg?branch=main" alt="build+test" style="margin: 5px;">
+    </a>
+    <a href="https://radon.readthedocs.io/en/latest/api.html#module-radon.complexity">
+      <img src="https://img.shields.io/badge/complexity-A-brightgreen" alt="complexity" style="margin: 5px;">
+    </a>
+    <a href="https://pypi.org/project/bandit/">
+      <img src="https://img.shields.io/badge/vulnerabilities-None-brightgreen" alt="vulnerabilities" style="margin: 5px;">
+    </a>
+    <a href="https://badge.fury.io/py/ascii-animator">
+      <img src="https://badge.fury.io/py/ascii-animator.svg" alt="PyPI version" style="margin: 5px;">
+    </a>
+    <a href="https://www.python.org/downloads/">
+      <img src="https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-teal" alt="python" style="margin: 5px;">
+    </a>
+  </div>
+  
+  <img src="https://github.com/user-attachments/assets/61de12c5-c7e7-4464-ae80-bc516a791bea" alt="ascii-animator image" style="width: 400px; border: 1px solid #ddd; border-radius: 5px; margin-top: 20px;">
+</div>
 
-A simple ASCII text animator.
-
+<br>
 The `ascii-art-animator` CLI will take as input a GIF image, extract all the frames from it, convert each frame to ASCII art using [ascii-magic](https://pypi.org/project/ascii-magic/), then display each frame to the terminal using [list2term](https://pypi.org/project/list2term/).
 
 ### Installation
@@ -45,15 +61,17 @@ Use `ascii-art-animator` to convert the following GIF image to an ascii animatio
 ```bash
 ascii-art-animator -f docs/images/marcovich.gif -a -m 3 -c 100
 ```
-**input**
+**GIF Input**
 
 ![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/marcovich.gif)
 
-**output**
+**Program Output**
 
 ![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/marcovich-exec.gif)
 
-### `Animation` class
+---
+
+### The `Animation` class ⭐
 
 Use the Animation class to create your own animations.
 
@@ -89,27 +107,46 @@ A Matrix animation.
 
 A Conway Game-Of-Life implementation that uses `ascii_animator` to display the game to the terminal.
 
-### Development
+---
+
+### Installation 🚀
 
 Clone the repository and ensure the latest version of Docker is installed on your development server.
 
-Build the Docker image:
+1) Build the Docker image:
 ```bash
 docker image build \
 -t ascii-animator:latest .
 ```
 
-Run the Docker container:
+2) Run the Docker container:
 ```bash
 docker container run \
 --rm \
 -it \
 -v $PWD:/code \
+
 ascii-animator:latest \
 bash
 ```
 
-Execute the build:
+3) Execute the build:
 ```sh
 pyb -X
 ```
+
+---
+
+### 📄 Issues & Support  
+
+Encounter a problem? Have a suggestion? Feel free to **open an issue** and include the following details:  
+
+- ✅ **Clear description** of the issue or feature request  
+- 🛠️ **Steps to reproduce** (if applicable)  
+- 📸 **Screenshots or logs** (if relevant)  
+- 💡 **Expected vs. actual behavior**  
+
+Your feedback helps improve the project—thank you for contributing! 🚀  
+
+
+
