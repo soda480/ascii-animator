@@ -131,29 +131,29 @@ Speed.FAST
 
 ## Included Examples
 
-### [Selection Sort Animation](https://github.com/soda480/ascii-animator/blob/main/examples/example4.py)
+### [Selection Sort Animation](https://github.com/soda480/ascii-animator/blob/main/docs/examples/selection-sort-line.py)
 
 A selection sort search is a simple and efficient sorting algorithm that works by repeatedly selecting the smallest (or largest) element from the unsorted portion of the list and moving it to the sorted portion of the list.
 
 ![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/example4.gif)
 
-Here is another [example](https://github.com/soda480/ascii-animator/blob/main/examples/example6.py) of a selection sort animation this time using vertical bars.
+Here is another [example](https://github.com/soda480/ascii-animator/blob/main/docs/examples/selection-sort.py) of a selection sort animation this time using vertical bars.
 
 ![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/example6.gif)
 
-### [Plasma Wave Animation](https://github.com/soda480/ascii-animator/blob/main/examples/plasma-wave.py)
+### [Plasma Wave Animation](https://github.com/soda480/ascii-animator/blob/main/docs/examples/plasma-wave.py)
 
 A plasma wave animation.
 
 ![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/plasma-wave.gif)
 
-### [Vortex Reactor](https://github.com/soda480/ascii-animator/blob/main/examples/chromatic-vortex-reactor.py)
+### [Vortex Reactor](https://github.com/soda480/ascii-animator/blob/main/docs/examples/chromatic-vortex-reactor.py)
 
 A chromatic vortex reactor animation.
 
 ![example](https://raw.githubusercontent.com/soda480/ascii-animator/main/docs/images/chromatic-vortex-reactor.gif)
 
-### [Matrix Animation](https://github.com/soda480/ascii-animator/blob/main/examples/example3.py)
+### [Matrix Animation](https://github.com/soda480/ascii-animator/blob/main/docs/examples/matrix.py)
 
 A Matrix animation.
 
