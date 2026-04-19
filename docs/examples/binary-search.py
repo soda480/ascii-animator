@@ -70,7 +70,7 @@ class BinarySearch(Animation):
 
     def _update_grid(self, lo, md, hi, done=False):
         bright_yellow = Style.BRIGHT + Fore.YELLOW
-        self._grid[0] = f' Searching for:{self._search}'
+        # self._grid[0] = f' Searching for:{self._search}'
         self._grid[1] = self._show_numbers([(md, Style.BRIGHT + Back.YELLOW + Fore.BLACK)])
         self._grid[2] = self._show_line([(lo, u'\u25B2', bright_yellow), (md, u'\u25B2', bright_yellow), (hi, u'\u25B2', bright_yellow)])
         self._grid[3] = self._show_line([(lo, lo, bright_yellow), (md, md, bright_yellow), (hi, hi, bright_yellow)])
