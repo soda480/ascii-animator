@@ -1,4 +1,4 @@
-[![build+test](https://github.com/soda480/ascii-animator/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/soda480/ascii-animator/actions/workflows/main.yml)
+[![ci](https://github.com/soda480/ascii-animator/actions/workflows/ci.yml/badge.svg)](https://github.com/soda480/ascii-animator/actions/workflows/ci.yml)
 [![PyPI version](https://badge.fury.io/py/ascii-animator.svg)](https://badge.fury.io/py/ascii-animator)
 
 # ascii-animator
