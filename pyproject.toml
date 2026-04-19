@@ -1,3 +1,66 @@
+[project]
+name = "ascii-animator"
+dynamic = ["version"]
+authors = [
+  { name="Emilio Reyes", email="soda480@gmail.com" },
+]
+description = "A Python tool for rendering GIFs and custom animations as ASCII art directly in the terminal."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Environment :: Other Environment",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities",
+]
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+
+dependencies = [
+    "ascii-magic~=1.6",
+    "list2term"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ascii_animator*"]
+
+[project.urls]
+"Homepage" = "https://github.com/soda480/ascii-animator"
+
+[project.scripts]
+ascii-art-animator = "ascii_animator.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "build",
+    "flake8",
+    "mock",
+    "radon",
+    "bandit",
+    "coverage",
+    "genbadge[coverage]",
+    "twine"
+]
+
 [build-system]
-requires = ["pybuilder>=0.12.0"]
-build-backend = "pybuilder.pep517"
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.dynamic]
+version = {attr = "ascii_animator.__version__"}
